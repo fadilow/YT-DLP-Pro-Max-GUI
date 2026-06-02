@@ -1,4 +1,3 @@
-```markdown
 # ⚡ YT-DLP Pro Max GUI
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
@@ -34,9 +33,7 @@ To unlock the full potential of this app, you need two external tools placed in 
 3. Install required packages:
 ```bash
    pip install Pillow pystray
-
 ```
-
 4. Place `yt-dlp.exe` and `ffmpeg.exe` in the same directory.
 5. Run the script:
 
