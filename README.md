@@ -1,34 +1,95 @@
-# ⚡ YT-DLP Pro Max
+# ⚡ YT-DLP Pro Max GUI
 
-واجهة رسومية (GUI) احترافية، سريعة، ومريحة للعين لأداة التحميل الشهيرة `yt-dlp`. تتيح لك تحميل الفيديوهات والصوتيات بأقصى سرعة مع دعم دمج الجودات العالية، العمل في الخلفية، والتقاط الروابط تلقائياً.
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## ✨ المميزات (Features)
-- 🎨 **تصميم مريح للعين (Dark Mode):** مع 5 ألوان (Themes) متغيرة تُحفظ تلقائياً.
-- 🚀 **سرعة صاروخية:** واجهة خفيفة لا تستهلك موارد المعالج أثناء التحميل.
-- 📋 **التقاط ذكي للروابط:** بمجرد نسخ أي رابط، سيقفز البرنامج للمقدمة جاهزاً للتحميل.
-- ✂️ **قص الفيديو:** تحميل جزء معين من الفيديو (من الدقيقة كذا إلى الدقيقة كذا) بدون تحميل الفيديو كاملاً.
-- 🔽 **العمل في الخلفية (System Tray):** إمكانية إخفاء البرنامج بجوار الساعة أثناء التحميل.
-- ⚙️ **بدء التشغيل مع الويندوز:** خيار لتشغيل البرنامج بصمت مع بداية النظام.
-- 🔓 **تخطي الحجب:** دعم سحب تسجيل الدخول من المتصفحات (Chrome, Edge, Firefox) للتحميل من المواقع المقيدة مثل X (Twitter) أو Facebook.
+> **🇬🇧 English Documentation below | 🇦🇪 الشرح باللغة العربية بالأسفل**
 
 ---
 
-## 🛠️ متطلبات التشغيل (Prerequisites)
+## 🇬🇧 English
 
-لكي يعمل البرنامج بشكل كامل، يحتاج إلى أداتين مساعدتين يجب وضعهما في نفس مجلد البرنامج:
+A clean, modern, and blazingly fast Graphical User Interface (GUI) for the popular `yt-dlp` tool. It allows you to download videos and audio at maximum speed, supports high-quality merging, background execution, and smart clipboard monitoring.
 
-1. **أداة التحميل (yt-dlp):**
-   - قم بتحميل أحدث إصدار من [صفحة yt-dlp الرسمية (yt-dlp.exe)](https://github.com/yt-dlp/yt-dlp/releases).
-2. **أداة دمج الصوت والصورة (FFmpeg):** (مهمة جداً لتحميل جودات 1080p و 4K)
-   - قم بتحميلها من [موقع FFmpeg](https://ffmpeg.org/download.html) أو [Gyan.dev](https://www.gyan.dev/ffmpeg/builds/).
-   - استخرج الملف المضغوط، وادخل لمجلد `bin`، وانسخ ملف `ffmpeg.exe` فقط.
+### ✨ Features
+- 🎨 **Eye-Comfort Design:** Modern dark mode with 5 distinct accent colors saved automatically.
+- 🚀 **Turbo Speed:** Optimized UI thread that does not consume CPU during high-speed downloads.
+- 📋 **Smart Clipboard:** Automatically detects supported video URLs and brings the app to the front.
+- ✂️ **Video Trimming:** Download specific parts of a video (e.g., from 00:01:00 to 00:02:00) without downloading the whole file.
+- 🔽 **System Tray:** Hide the application to the system tray while downloading in the background.
+- ⚙️ **Auto-Startup:** Option to run the application silently in the background on Windows startup.
+- 🔓 **Bypass Restrictions:** Use browser cookies (Chrome, Edge, Firefox, etc.) to download from restricted sites like X (Twitter) or Facebook.
 
----
+### 🛠️ Prerequisites
+To unlock the full potential of this app, you need two external tools placed in the same folder as the application:
+1. **yt-dlp.exe:** The core downloader. Get it from [yt-dlp Releases](https://github.com/yt-dlp/yt-dlp/releases).
+2. **ffmpeg.exe:** Required for merging audio and video into 1080p/4K MP4. Get it from [Gyan.dev](https://www.gyan.dev/ffmpeg/builds/) (extract the ZIP and copy `bin/ffmpeg.exe`).
 
-## 🚀 طريقة التثبيت والاستخدام (Installation & Usage)
+### 🚀 Installation & Usage
 
-1. **تثبيت لغة بايثون:** تأكد من تثبيت [Python](https://www.python.org/downloads/) على جهازك.
-2. **تنزيل المشروع:** قم بتنزيل هذا المشروع (Clone or Download ZIP) واستخرجه في مجلد.
-3. **تثبيت المكتبات المطلوبة:** افتح موجه الأوامر (CMD) داخل مجلد المشروع واكتب:
+**Option 1: Running from Python Script**
+1. Install [Python](https://www.python.org/downloads/).
+2. Clone this repository or download the ZIP.
+3. Install required packages:
    ```bash
-   pip install -r requirements.txt
+   pip install Pillow pystray
+Place yt-dlp.exe and ffmpeg.exe in the same directory.
+
+Run the script:
+
+Bash
+python main.py
+Option 2: Compiling to a Standalone .exe
+If you want to create a single .exe file so you don't need Python installed:
+
+Install PyInstaller:
+
+Bash
+pip install pyinstaller
+Build the executable:
+
+Bash
+pyinstaller --noconsole --onefile main.py
+You will find the final .exe inside the dist/ folder. Move it to your desired location, place yt-dlp.exe and ffmpeg.exe next to it, and enjoy!
+
+🇦🇪 العربية
+واجهة رسومية (GUI) احترافية، سريعة، ومريحة للعين لأداة التحميل الشهيرة yt-dlp. تتيح لك تحميل الفيديوهات والصوتيات بأقصى سرعة مع دعم دمج الجودات العالية، العمل في الخلفية، والتقاط الروابط تلقائياً.
+
+✨ المميزات
+🎨 تصميم مريح للعين (Dark Mode): مع 5 ألوان (Themes) متغيرة تُحفظ تلقائياً.
+🚀 سرعة صاروخية: واجهة خفيفة لا تستهلك موارد المعالج أثناء التحميل.
+📋 التقاط ذكي للروابط: بمجرد نسخ أي رابط، سيقفز البرنامج للمقدمة جاهزاً للتحميل.
+✂️ قص الفيديو: تحميل جزء معين من الفيديو (من الدقيقة كذا إلى الدقيقة كذا) بدون تحميل الفيديو كاملاً.
+🔽 العمل في الخلفية (System Tray): إمكانية إخفاء البرنامج بجوار الساعة أثناء التحميل.
+⚙️ بدء التشغيل مع الويندوز: خيار لتشغيل البرنامج بصمت مع بداية النظام.
+🔓 تخطي الحجب: دعم سحب تسجيل الدخول من المتصفحات (Chrome, Edge, Firefox) للتحميل من المواقع المقيدة مثل X (Twitter) أو Facebook.
+
+🛠️ متطلبات التشغيل
+لكي يعمل البرنامج بكامل طاقته، يحتاج إلى أداتين مساعدتين يجب وضعهما في نفس مجلد البرنامج:
+أداة التحميل (yt-dlp): قم بتحميل أحدث إصدار من صفحة yt-dlp الرسمية.
+أداة دمج الصوت والصورة (FFmpeg): (مهمة جداً لتحميل جودات 1080p و 4K). قم بتحميلها من موقع FFmpeg، استخرج الملف المضغوط، وادخل لمجلد bin، وانسخ ملف ffmpeg.exe فقط.
+
+🚀 طريقة التثبيت والاستخدام
+الخيار الأول: التشغيل المباشر عبر بايثون
+تأكد من تثبيت Python على جهازك.
+قم بتنزيل هذا المشروع (Clone or Download ZIP) واستخرجه في مجلد.
+قم بتثبيت المكتبات المطلوبة بفتح موجه الأوامر (CMD) وكتابة:
+
+Bash
+pip install Pillow pystray
+
+ضع ملفي yt-dlp.exe و ffmpeg.exe داخل المجلد بجوار ملف الكود.
+قم بتشغيل البرنامج:
+Bash
+python main.py
+
+الخيار الثاني: تحويل البرنامج إلى ملف تنفيذي .exe
+إذا كنت ترغب في تحويل البرنامج لملف يعمل بضغطة زر بدون الحاجة لبرنامج بايثون مستقبلاً:
+قم بتثبيت أداة التحويل:
+Bash
+pip install pyinstaller
+
+افتح موجه الأوامر (CMD) في نفس مسار ملف الكود، وقم بتشغيل أمر التحويل التالي:
+Bash
+pyinstaller --noconsole --onefile main.py
+ستجد برنامجك النهائي بداخل مجلد dist/. قم بنقله لأي مكان، وضع بجواره yt-dlp.exe و ffmpeg.exe، وابدأ الاستخدام مباشرة!
